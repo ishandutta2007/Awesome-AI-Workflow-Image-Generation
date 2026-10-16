@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#06080e" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#93c5fd" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="flowGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.7" />
+    </linearGradient>
+
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.45" />
+    </pattern>
+
+    <style>
+      @keyframes dashAnim {
+        0% { stroke-dashoffset: 200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { transform: scale(1); opacity: 0.4; }
+        50% { transform: scale(1.15); opacity: 0.85; }
+      }
+      @keyframes nodeFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+      @keyframes particleDrift {
+        0% { transform: translate(0, 0); opacity: 0.2; }
+        50% { transform: translate(15px, -10px); opacity: 0.7; }
+        100% { transform: translate(0, 0); opacity: 0.2; }
+      }
+      .anim-dash-1 {
+        stroke-dasharray: 8, 8;
+        animation: dashAnim 12s linear infinite;
+      }
+      .anim-dash-2 {
+        stroke-dasharray: 6, 6;
+        animation: dashAnim 8s linear infinite reverse;
+      }
+      .anim-pulse {
+        animation: pulseGlow 4s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .anim-node {
+        animation: nodeFloat 6s ease-in-out infinite;
+      }
+      .anim-particle {
+        animation: particleDrift 5s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+  <rect width="1200" height="360" rx="16" fill="url(#cyberGrid)" />
+
+  <!-- Dynamic Ambient Glow Spots (Background) -->
+  <circle cx="150" cy="80" r="140" fill="#38bdf8" opacity="0.12" class="anim-pulse" />
+  <circle cx="1050" cy="280" r="160" fill="#a855f7" opacity="0.14" class="anim-pulse" style="animation-delay: -2s;" />
+  <circle cx="600" cy="180" r="220" fill="#6366f1" opacity="0.08" class="anim-pulse" style="animation-delay: -1s;" />
+
+  <!-- Animated Node Graph Pipelines (Behind text, unobtrusive) -->
+  <g opacity="0.55">
+    <!-- Connecting curved paths -->
+    <path d="M 60 70 Q 220 30, 360 80 T 660 60 T 960 110 T 1140 70" 
+          fill="none" stroke="url(#flowGrad1)" stroke-width="2.5" class="anim-dash-1" />
+    <path d="M 60 290 Q 240 330, 480 270 T 800 310 T 1140 260" 
+          fill="none" stroke="url(#flowGrad2)" stroke-width="2" class="anim-dash-2" />
+    <path d="M 120 70 C 120 200, 260 200, 360 80" 
+          fill="none" stroke="#6366f1" stroke-width="1.2" stroke-dasharray="4, 4" opacity="0.5" />
+    <path d="M 840 290 C 940 200, 1020 180, 1140 70" 
+          fill="none" stroke="#ec4899" stroke-width="1.2" stroke-dasharray="4, 4" opacity="0.5" />
+
+    <!-- Visual Pipeline Node Pills (Low opacity background elements) -->
+    <g class="anim-node" style="animation-delay: 0s;">
+      <rect x="70" y="52" width="105" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+      <circle cx="86" cy="68" r="4" fill="#38bdf8" />
+      <text x="98" y="73" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">PROMPT</text>
+    </g>
+
+    <g class="anim-node" style="animation-delay: -1.5s;">
+      <rect x="310" y="64" width="115" height="32" rx="16" fill="#1e293b" stroke="#818cf8" stroke-width="1.5" />
+      <circle cx="326" cy="80" r="4" fill="#818cf8" />
+      <text x="338" y="85" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">DIFFUSION</text>
+    </g>
+
+    <g class="anim-node" style="animation-delay: -3s;">
+      <rect x="1000" y="54" width="130" height="32" rx="16" fill="#1e293b" stroke="#c084fc" stroke-width="1.5" />
+      <circle cx="1016" cy="70" r="4" fill="#c084fc" />
+      <text x="1028" y="75" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">HI-RES LATENT</text>
+    </g>
+
+    <g class="anim-node" style="animation-delay: -2s;">
+      <rect x="90" y="274" width="120" height="32" rx="16" fill="#1e293b" stroke="#ec4899" stroke-width="1.5" />
+      <circle cx="106" cy="290" r="4" fill="#ec4899" />
+      <text x="118" y="295" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">CONTROLNET</text>
+    </g>
+
+    <g class="anim-node" style="animation-delay: -4s;">
+      <rect x="990" y="244" width="125" height="32" rx="16" fill="#1e293b" stroke="#2dd4bf" stroke-width="1.5" />
+      <circle cx="1006" cy="260" r="4" fill="#2dd4bf" />
+      <text x="1018" y="265" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">UPSCALE / VAE</text>
+    </g>
+
+    <!-- Floating Sparkles / Particles -->
+    <circle cx="280" cy="140" r="2.5" fill="#67e8f9" class="anim-particle" />
+    <circle cx="920" cy="180" r="2.5" fill="#f472b6" class="anim-particle" style="animation-delay: -2s;" />
+    <circle cx="750" cy="70" r="2" fill="#a78bfa" class="anim-particle" style="animation-delay: -1s;" />
+    <circle cx="450" cy="300" r="2" fill="#38bdf8" class="anim-particle" style="animation-delay: -3.5s;" />
+  </g>
+
+  <!-- Foreground Glass Overlay Panel for Perfect Readability -->
+  <g>
+    <!-- Centered Glass Card Backing -->
+    <rect x="160" y="105" width="880" height="150" rx="20" 
+          fill="#0c1222" fill-opacity="0.82" 
+          stroke="#334155" stroke-opacity="0.6" stroke-width="1" />
+
+    <!-- Category Pill Badge -->
+    <rect x="475" y="118" width="250" height="26" rx="13" 
+          fill="#1e1b4b" stroke="#6366f1" stroke-width="1" stroke-opacity="0.8" />
+    <text x="600" y="135" text-anchor="middle" 
+          fill="#a5b4fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="11" font-weight="700" letter-spacing="1.2">✦ CURATED ECOSYSTEM DIRECTORY ✦</text>
+
+    <!-- Main Title -->
+    <text x="600" y="180" text-anchor="middle" 
+          fill="url(#textGrad)" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+          font-size="34" font-weight="800" letter-spacing="-0.5">
+      Awesome AI Workflow &amp; Image Generation
+    </text>
+
+    <!-- Subtitle -->
+    <text x="600" y="210" text-anchor="middle" 
+          fill="#94a3b8" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+          font-size="14.5" font-weight="500">
+      Node-Based Diffusion Pipelines • SOTA Open-Source Models • Controlled Generation • Production SaaS
+    </text>
+
+    <!-- Feature Tags -->
+    <g transform="translate(230, 226)">
+      <!-- Tag 1 -->
+      <rect x="0" y="0" width="130" height="22" rx="11" fill="#1e293b" fill-opacity="0.9" stroke="#475569" stroke-width="0.8" />
+      <text x="65" y="15" text-anchor="middle" fill="#38bdf8" font-family="sans-serif" font-size="10.5" font-weight="600">⚡ ComfyUI Nodes</text>
+
+      <!-- Tag 2 -->
+      <rect x="145" y="0" width="135" height="22" rx="11" fill="#1e293b" fill-opacity="0.9" stroke="#475569" stroke-width="0.8" />
+      <text x="212" y="15" text-anchor="middle" fill="#a78bfa" font-family="sans-serif" font-size="10.5" font-weight="600">🎨 FLUX &amp; SDXL</text>
+
+      <!-- Tag 3 -->
+      <rect x="295" y="0" width="135" height="22" rx="11" fill="#1e293b" fill-opacity="0.9" stroke="#475569" stroke-width="0.8" />
+      <text x="362" y="15" text-anchor="middle" fill="#f472b6" font-family="sans-serif" font-size="10.5" font-weight="600">📐 ControlNet / IP-A</text>
+
+      <!-- Tag 4 -->
+      <rect x="445" y="0" width="145" height="22" rx="11" fill="#1e293b" fill-opacity="0.9" stroke="#475569" stroke-width="0.8" />
+      <text x="517" y="15" text-anchor="middle" fill="#34d399" font-family="sans-serif" font-size="10.5" font-weight="600">🏢 Production SaaS</text>
+
+      <!-- Tag 5 -->
+      <rect x="605" y="0" width="135" height="22" rx="11" fill="#1e293b" fill-opacity="0.9" stroke="#475569" stroke-width="0.8" />
+      <text x="672" y="15" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-size="10.5" font-weight="600">🔍 Real-Time Upscale</text>
+    </g>
+  </g>
+</svg>
