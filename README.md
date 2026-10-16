@@ -10,6 +10,7 @@
   <a href="https://github.com/ishandutta2007/Awesome-AI-Workflow-Image-Generation/pulls"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-AI-Workflow-Image-Generation/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-purple.svg?style=flat-square" alt="License" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-AI-Workflow-Image-Generation"><img src="https://img.shields.io/badge/Topic-AI%20Workflows%20%26%20Diffusion-orange?style=flat-square" alt="Topic" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 </p>
 
 ---
@@ -29,6 +30,8 @@ Welcome to the definitive hub for **AI workflow automation and image synthesis**
 - [💻 Open-Source GitHub Projects](#-open-source-github-projects)
 - [🧩 Key Architecture: From Prompting to Modular Pipelines](#-key-architecture-from-prompting-to-modular-pipelines)
 - [🤝 How to Contribute](#-how-to-contribute)
+- [🌟 Star History](#--star-history)
+- [💖 Support & Community](#-support--community)
 - [⚖️ Legal, Ethics & Licensing Disclaimer](#️-legal-ethics--licensing-disclaimer)
 
 ---
@@ -194,6 +197,30 @@ We welcome additions, corrections, and new tool submissions from artists, resear
    - For **SaaS tools**: Provide exact company scale/valuation, specific starting prices, specific free tier/trial limits, and core differentiators.
    - For **Open-Source tools**: Include repository URL, social star badge link (`style=social&color=white`), license, and description. Place it in the correct position according to its stargazer count.
 4. 🚀 **Submit a Pull Request** with a concise summary of the changes.
+
+---
+
+##  Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-AI-Workflow-Image-Generation&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-AI-Workflow-Image-Generation&type=date&legend=top-left)
+
+---
+
+## 💖 Support & Community
+
+Thank you so much for exploring and supporting **Awesome AI Workflow & Image Generation**! 🙏
+
+If this curated directory has helped you in your creative projects, production workflows, or research:
+- ⭐ **Star the repo:** Show your love and help other developers and artists discover this resource!
+- 🍴 **Fork & Contribute:** Help keep models, nodes, and pricing data fresh and comprehensive.
+- 📢 **Share:** Spread the word across Twitter/X, LinkedIn, Discord, and Reddit communities.
+- ☕ **Buy a Coffee / Sponsor:** If you would like to support maintenance and curation, check out the maintainer's [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+<p align="center">
+  <a href="https://github.com/sponsors/ishandutta2007">
+    <img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?style=for-the-badge&logo=github-sponsors" alt="Sponsor on GitHub" />
+  </a>
+</p>
 
 ---
 
